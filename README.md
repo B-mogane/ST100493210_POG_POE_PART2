@@ -1,7 +1,6 @@
 # RaceDay Part 2 — ASP.NET Core REST API starter
 
-This starter is structured around the supplied RaceDay SQL schema and endpoint plan. It is a foundation for completing, running, testing, and committing the assessed project. Review every file, run it locally, and  meaningful GitHub commits.
-
+This starter is structured around the supplied RaceDay SQL schema and endpoint plan. It is a foundation for completing, running, testing, and committing the assessed project. 
 ## Requirements
 - .NET 8 SDK 
 - SQL Server / SQL Server Express / LocalDB
