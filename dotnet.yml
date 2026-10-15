@@ -15,3 +15,6 @@ jobs:
         with:
           dotnet-version: 8.0.x
      
+ - name: Restore
+        run: dotnet restore RaceDay.API/RaceDay.API.csproj && dotnet restore RaceDay.Tests/RaceDay.Tests.csproj
+      
