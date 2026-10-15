@@ -34,5 +34,3 @@ This starter uses JWT bearer authentication. Call `/api/auth/login`, copy the to
 - Organiser routes check ownership of the relevant event.
 - Registration permits only `Organiser` or `Participant`. For a public production system, consider preventing public self-registration as Organiser and instead granting that role administratively.
 - Payment endpoint records a payment request but does not integrate with a real payment provider. Do not represent it as a verified payment without provider confirmation.
-- Add more unit/integration tests, including role/ownership and validation tests, before submission.
-- Commit your work incrementally. The required 20 meaningful commits must be made on your own GitHub account; do not fabricate commits.
