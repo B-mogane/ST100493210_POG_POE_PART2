@@ -1,0 +1,36 @@
+# RaceDay Part 2 — ASP.NET Core REST API starter
+
+This starter is structured around the supplied RaceDay SQL schema and endpoint plan. It is a foundation for completing, running, testing, and committing the assessed project. 
+
+## Requirements
+- .NET 8 SDK 
+- SQL Server / SQL Server Express / LocalDB
+- Visual Studio 2022 with ASP.NET and web development workload
+
+## Important schema note
+The supplied SQL script is the reference schema. The EF Core models below use its six tables: User, Event, Category, Enrolment, Result, Payment.  Distance is currently stored per Category as DistanceKm.
+
+
+## Setup
+1. Open `RaceDay.API/RaceDay.API.csproj` in Visual Studio.
+2. Update `ConnectionStrings:RaceDay` in `appsettings.json` for your SQL Server instance.
+3. Open a terminal in `RaceDay.API` and run:
+   ```bash
+   dotnet restore
+   dotnet tool install --global dotnet-ef
+   dotnet ef migrations add InitialCreate
+   dotnet ef database update
+   dotnet run
+   ```
+4. Open the Swagger URL printed in the terminal (usually `/swagger`).
+5. Run tests from the solution root with `dotnet test`.
+
+
+## Authentication
+This starter uses JWT bearer authentication. Call `/api/auth/login`, copy the token, then click **Authorize** in Swagger and enter `Bearer YOUR_TOKEN`. 
+
+## Security and assessment checklist
+- Never accept `OrganiserID` or `UserID` from a request body to establish ownership; the authenticated identity determines it.
+- Organiser routes check ownership of the relevant event.
+- Registration permits only `Organiser` or `Participant`. For a public production system, consider preventing public self-registration as Organiser and instead granting that role administratively.
+- Payment endpoint records a payment request but does not integrate with a real payment provider. Do not represent it as a verified payment without provider confirmation.
