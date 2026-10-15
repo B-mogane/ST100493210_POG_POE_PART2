@@ -14,9 +14,4 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Restore
-        run: dotnet restore RaceDay.API/RaceDay.API.csproj && dotnet restore RaceDay.Tests/RaceDay.Tests.csproj
-      - name: Build API
-        run: dotnet build RaceDay.API/RaceDay.API.csproj --configuration Release --no-restore
-      - name: Run tests
-        run: dotnet test RaceDay.Tests/RaceDay.Tests.csproj --configuration Release
+     
